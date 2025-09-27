@@ -6,11 +6,11 @@ html, body {
 body {
     min-height: 200vh;
     padding-top: 80px;
+    font-family: sans-serif;
 }
 
-
 .skelly-img {
-    height: 80%;
+    height: 50px;
     width: auto;
 }
 
@@ -20,24 +20,113 @@ nav {
     width: 100%;
     height: 60px;
     background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
     padding: 0 20px;
+    position: relative;
 }
 
 .nav-content {
     display: flex;
-    max-width: 1200px;
-    margin: 0;
     padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-content a {
     text-decoration: none;
+    color: #333;
     padding: 0 15px;
     white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-content a:hover {
+    color: #00eeff;
+}
+
+/*Burgir Icon*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- MEDIA QUERY: When the screen is small (e.g., less than 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Show the hamburger icon */
+    .hamburger {
+        display: block; 
+    }
+    
+    /* 2. Hide the traditional links */
+    .nav-content {
+        display: none; 
+        position: absolute; 
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        transform: none;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-content a {
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-content.active {
+        display: flex;
+    }
+
+    /* 3. Reduce padding for the container on small screens for better use of space */
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    /* 4. Ensure the image is still visible */
+    .skelly-img {
+        /* No change needed, but confirms it is still displayed */
+        display: block; 
+    }
 }
