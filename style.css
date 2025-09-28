@@ -132,13 +132,13 @@ nav {
     }
 }
 
-/*--------------------------------- Welcome ---------------------------------*/
+/*--------------------------------- Welcome Section ---------------------------------*/
 .welcome-sect {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-left: 10%;
     margin-right: 10%;
     padding: 0 2rem 4rem 2rem;
@@ -165,7 +165,19 @@ nav {
 }
 
 .ondor-r-img {
-    height: 1.2em;
-    width: auto;
-    transform: translateY(0.2em);
+    height: 100px;
+    width: 500px;
+    transform: translateY(0.4em);
+}
+
+/*--------------------------------- Chosen Section ---------------------------------*/
+.chosen-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 2rem 4rem 2rem;
 }
