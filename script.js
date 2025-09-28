@@ -1,3 +1,4 @@
+//--------------------------------------------------------------//
 const hamburger = document.querySelector(".hamburger");
 const navContent = document.querySelector(".nav-content");
 
@@ -11,4 +12,15 @@ window.addEventListener("resize", () => {
         hamburger.classList.remove("active");
         navContent.classList.remove("active");
     }
+})
+
+//--------------------------------------------------------------//
+const bookieImg = document.querySelector('.bo1-img');
+
+bookieImg.addEventListener('mouseover', () => {
+    bookieImg.src = 'img/bo2.png';
+})
+
+bookieImg.addEventListener('mouseout', () => {
+    bookieImg.src = 'img/bo1.png';
 })
