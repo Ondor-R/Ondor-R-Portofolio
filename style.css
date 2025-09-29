@@ -15,6 +15,17 @@ body {
     width: auto;
 }
 
+.sects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 2rem 4rem 2rem;
+}
+
 /*--------------------------------- Navigation ---------------------------------*/
 nav {
     top: 0;
@@ -133,16 +144,6 @@ nav {
 }
 
 /*--------------------------------- Welcome Section ---------------------------------*/
-.welcome-sect {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 0 2rem 4rem 2rem;
-}
 
 .bo1-img {
     width: 80px;
@@ -158,26 +159,229 @@ nav {
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;
+    color: #333;
 }
 
 .welcome-sect p {
     text-align: center;
+    color: #686868;
 }
 
 .ondor-r-img {
-    height: 100px;
-    width: 500px;
-    transform: translateY(0.4em);
+    height: 70px;
+    width: 300px;
+    transform: translateY(0.25em);
 }
 
-/*--------------------------------- Chosen Section ---------------------------------*/
-.chosen-sect {
+/*--------------------------------- Graphic Design Section ---------------------------------*/
+.img-design {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.graphic_design-container {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 400px;
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #e0e0e0; /* Placeholder color */
+    border-radius: 8px; /* Optional: rounded corners */
+
+    /* These are for centering the numbers I added in the example */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 0 2rem 4rem 2rem;
+    font-size: 2rem;
+    color: #888;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* This is the inner shadow */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    
+    /* This makes sure the shadow doesn't interfere with mouse clicks */
+    pointer-events: none; 
+}
+
+.grid-item:hover .img-design {
+    transform: scale(1.05);
+}
+
+/* Modifier class to make an item span 2 columns and 2 rows */
+.grid-item--large {
+    grid-row: span 2;
+    background-color: #c5c5c5; /* A different color for emphasis */
+}
+
+/*--------------------------------- Arts Section ---------------------------------*/
+.arts-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.arts-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.arts-container::-webkit-scrollbar {
+    display: none;
+}
+
+.grid-img {
+    flex: 0 0 32%;
+    margin: 20px 1rem;
+    display: block;
+    float: left;
+    width: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.grid-img:hover {
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 0 5px 20px #000000;
+
+    transform: translateY(-7px) scale(1.05) rotateX(15deg);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+.grid-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    
+    background: linear-gradient(
+        35deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.15) 43%,
+        rgba(255, 255, 255, 0.25) 100%,
+        transparent 60%
+    );
+    
+    transform: translateY(-45%);
+    transition: transform 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.grid-img:hover::before {
+    /* Shine move to... */
+    transform: translateY(-10%);
+}
+
+.img-art {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* 4. The navigation arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(180, 246, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: #61f4ff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.9);
+}
+
+.left-arrow {
+    left: -20px; /* Position outside the container */
+}
+
+.right-arrow {
+    right: -20px; /* Position outside the container */
+}
+
+/*--------------------------------- Modal Section ---------------------------------*/
+.modal_ {
+    display: none; 
+    position: fixed; 
+    z-index: 9; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1080px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
