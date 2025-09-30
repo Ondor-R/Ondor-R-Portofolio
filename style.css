@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -16,6 +20,7 @@ body {
 }
 
 .sects {
+    scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +29,10 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     padding: 0 2rem 4rem 2rem;
+}
+
+.sects .img-sect {
+    margin-top: 20px;
 }
 
 /*--------------------------------- Navigation ---------------------------------*/
@@ -141,7 +150,7 @@ nav {
 
 .graphic_design-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* grid-auto-rows: 400px; */
@@ -192,7 +201,7 @@ nav {
 .arts-wrapper {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     border-radius: 8px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -293,6 +302,219 @@ nav {
     right: -20px; /* Position outside the container */
 }
 
+/*--------------------------------- Github Section ---------------------------------*/
+.github-sect {
+    max-width: 1000px;
+    background-color: #52525244;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.github-container {
+    display: grid;
+    /* This creates a responsive grid. It will fit as many 300px columns as it can. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* The space between the cards */
+    width: 100%;
+}
+
+.repo-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* This is the key: we use flexbox to organize the content inside the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the link to the bottom */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repo-container:hover {
+    transform: translateY(-5px); /* Lifts the card up slightly on hover */
+    box-shadow: 0 6px 12px rgba(101, 245, 255, 0.7);
+}
+
+.repo-container:hover .repo-link {
+    color: #0df5fd;
+}
+
+.repo-container:hover .repo-link:hover {
+    color: #01d1d8;
+}
+
+.repo-head {
+    display: flex;
+    align-items: center; /* Vertically aligns the icon and title */
+    gap: 10px; /* Space between the icon and title */
+}
+
+.repo-head img {
+    width: 30px;
+}
+
+.repo-head h3 {
+    margin: 0; /* Removes default margin from the h3 tag */
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.repo-container p {
+    font-size: 12px;
+    margin: 15px 0; /* Adds some space above and below the paragraph */
+    color: #7e7e7e;
+    line-height: 1.5;
+    flex-grow: 1; /* Allows the paragraph to grow and fill space */
+}
+
+.repo-link {
+    display: inline-flex; /* Use inline-flex for proper alignment */
+    align-items: center;
+    gap: 8px; /* Space between "View on Github" and the arrow */
+    text-decoration: none;
+    color: #99f8ff;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start; /* Aligns the link to the start of its container */
+}
+
+.repo-link img {
+    width: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.repo-link:hover img {
+    transform: translateX(5px); /* Moves the arrow slightly to the right on hover */
+}
+
+/*--------------------------------- About me Section ---------------------------------*/
+.aboutme-container {
+    display: flex;
+    align-items: center; /* Vertically center the card and the image */
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px; /* Set a max-width for the section */
+}
+
+/* This is the container for the list (left column) */
+.about_ {
+    flex: 1; /* Make the columns share space equally */
+}
+
+/* We'll style the <ul> as a clean, white card */
+.about_list_ {
+    list-style-type: none;
+    background-color: #52525244; /* White background to match other cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    width: 100%; 
+    padding: 25px;
+    border-radius: 8px;
+    margin: 0; /* Remove the old unnecessary margin */
+}
+
+/* Style each list item for better spacing */
+.about_list_ li {
+    margin-bottom: 15px; /* Add space between each link */
+}
+.about_list_ li:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+}
+
+/* Style the plain text email */
+.about_list_ p {
+    text-align: left;
+    font-size: 1rem;
+    padding: 15px; /* Give it padding like the links */
+    margin: 0;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Clean up the link styles */
+.about_list_ li a {
+    display: flex;
+    align-items: center;
+    
+    background-color: rgba(206, 228, 228, 0.75); /* A very light grey background */
+    color: #ffffff;
+    width: auto; 
+    height: auto;
+    padding: 15px;
+    
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    transform: skew(-20deg); /* IMPORTANT: Remove the skew */
+    transition: all 0.2s ease-in-out;
+}
+
+.about_list_ li a:hover {
+    background-color: rgba(0, 255, 255, 0.85); /* A light blue on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.55), 0 0 20px rgba(0, 255, 255, 0.55), 0 0 30px rgba(0, 255, 255, 0.55);
+    transform: translateY(-5px) skew(-20deg);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Remove the "un-skew" for the text inside the link */
+.about_list_ li a span {
+    transform: skew(20deg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Standardize the icon sizes */
+.img_about_ {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+/* Style the GIF on the right */
+.img_cherry_on_top_ {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Give it matching rounded corners */
+}
+
+/*--------------------------------- Footer ---------------------------------*/
+footer {
+    padding: 20px 0; /* Provides top/bottom padding for the dark bar */
+    margin-top: 60px;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* These lines fix the stretching issue */
+    max-width: 1000px; /* Matches the max-width of your other sections */
+    margin: 0 auto;    /* Centers the container horizontally */
+    padding: 0 20px;   /* Adds breathing room on smaller screens */
+}
+
+.r-word {
+    color: #00eeff;
+}
+
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
 /*--------------------------------- Modal Section ---------------------------------*/
 .modal_ {
     display: none; 
@@ -343,6 +565,14 @@ nav {
   }
 }
 
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
 /* --- MEDIA QUERY: When the screen is small (e.g., less than 768px) --- */
 @media (max-width: 768px) {
     .sects {
@@ -444,4 +674,17 @@ nav {
     .right-arrow {
         right: 5px;
     }
+
+    /* ------------------ About Me Section ------------------ */
+    .aboutme-container {
+        flex-direction: column; /* Stack the columns on top of each other */
+        gap: 40px;
+    }
+
+    /* ------------------ Footer ------------------ */
+    .footer-container {
+        flex-direction: column; /* Stack the items vertically */
+        gap: 10px; /* Add a little space between the text lines */
+    }
+
 }
