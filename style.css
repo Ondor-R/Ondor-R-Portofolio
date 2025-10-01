@@ -59,7 +59,6 @@ nav {
     justify-content: space-between;
     width: 100%;
     max-width: 1000px;
-    
     position: relative;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -584,7 +583,8 @@ footer {
     .nav-content {
         display: none; 
         position: absolute; 
-        top: 60px; 
+        top: 60px;
+        left: 0;
         
         width: 100%;
         transform: none;
