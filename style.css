@@ -401,6 +401,8 @@ nav {
 /* This is the container for the list (left column) */
 .about_ {
     flex: 1; /* Make the columns share space equally */
+    display: flex;
+    justify-content: center;
 }
 
 /* We'll style the <ul> as a clean, white card */
@@ -688,6 +690,10 @@ footer {
     .aboutme-container {
         flex-direction: column; /* Stack the columns on top of each other */
         gap: 40px;
+    }
+
+    .about_ {
+        width: 100%;
     }
 
     /* ------------------ Footer ------------------ */
