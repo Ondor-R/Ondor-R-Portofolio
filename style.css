@@ -55,7 +55,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 0 20px;
     position: relative;
 }
@@ -313,7 +313,7 @@ nav {
 .github-container {
     display: grid;
     /* This creates a responsive grid. It will fit as many 300px columns as it can. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px; /* The space between the cards */
     width: 100%;
 }
@@ -484,6 +484,15 @@ nav {
 }
 
 /*--------------------------------- Footer ---------------------------------*/
+footer hr {
+    width: 100%;
+    max-width: 1000px; /* Matches the max-width of your other sections */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1;
+    height: 1px;
+}
+
 footer {
     padding: 20px 0; /* Provides top/bottom padding for the dark bar */
     margin-top: 60px;
@@ -585,7 +594,7 @@ footer {
     /* ------------------ Navigation ------------------ */
     /* 1. Show the hamburger icon */
     .hamburger {
-        display: block; 
+        display: block;
     }
     
     /* 2. Hide the traditional links */
