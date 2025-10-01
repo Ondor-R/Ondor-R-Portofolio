@@ -61,7 +61,6 @@ const artsContainer = document.querySelector('.arts-container');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-// EVENT LISTENERS FOR MANUAL SCROLLING
 nextBtn.addEventListener('click', () => {
     const scrollAmount = artsContainer.clientWidth;
     artsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
