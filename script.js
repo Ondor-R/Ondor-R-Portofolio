@@ -18,11 +18,11 @@ window.addEventListener("resize", () => {
 const bookieImg = document.querySelector('.bo1-img');
 
 bookieImg.addEventListener('mouseover', () => {
-    bookieImg.src = 'img/bo2.png';
+    bookieImg.src = 'img/bo2.webp';
 })
 
 bookieImg.addEventListener('mouseout', () => {
-    bookieImg.src = 'img/bo1.png';
+    bookieImg.src = 'img/bo1.webp';
 })
 
 //--------------------------------------------------------------MODAL//
@@ -48,6 +48,11 @@ imagesArt.forEach(img => {
     modalImg.src = this.src;
     }
 });
+
+const closeBtn = document.querySelector('.close-button');
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
 
 // --- Close modal when clicking the background ---
 window.onclick = function(event) {

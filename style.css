@@ -525,11 +525,35 @@ footer {
     background-color: rgba(0,0,0,0.9); 
 }
 
-.modal-content {
+.modal-image-wrapper {
+    position: relative;
     margin: auto;
     display: block;
     width: 80%;
     max-width: 1080px;
+}
+
+.modal-content {
+    display: block;
+    width: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
 }
 
 #caption {
