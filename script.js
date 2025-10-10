@@ -18,11 +18,11 @@ window.addEventListener("resize", () => {
 const bookieImg = document.querySelector('.bo1-img');
 
 bookieImg.addEventListener('mouseover', () => {
-    bookieImg.src = 'img/bo2.webp';
+    bookieImg.src = 'img/bob2.webp';
 })
 
 bookieImg.addEventListener('mouseout', () => {
-    bookieImg.src = 'img/bo1.webp';
+    bookieImg.src = 'img/bob1.webp';
 })
 
 //--------------------------------------------------------------MODAL//
@@ -75,3 +75,42 @@ prevBtn.addEventListener('click', () => {
     const scrollAmount = artsContainer.clientWidth;
     artsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 });
+
+//-------------------------------------------------------------- NAVBAR SCROLL EFFECT //
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+//-------------------------------------------------------------- Bookie IMG CLICK ANIMATION //
+const bookieLink = document.getElementById('bookie-link');
+const bookieNavImg = document.querySelector('.bookie-img');
+const welcomeSect = document.getElementById('welcome-nav');
+
+if (bookieLink && bookieNavImg && welcomeSect) {
+    bookieLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if (window.scrollY === 0) {
+            return; 
+        }
+
+        bookieNavImg.src = 'img/bo2.webp';
+
+        welcomeSect.scrollIntoView({ behavior: 'smooth' });
+
+        const listenForScrollEnd = () => {
+            if (window.scrollY < 5) {
+                bookieNavImg.src = 'img/bo1.webp';
+                window.removeEventListener('scroll', listenForScrollEnd);
+            }
+        };
+
+        window.addEventListener('scroll', listenForScrollEnd);
+    });
+}
