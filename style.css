@@ -139,7 +139,7 @@ nav.scrolled {
 /*--------------------------------- Welcome Section ---------------------------------*/
 
 .bo1-img {
-    width: 80px;
+    width: 100px;
     transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
@@ -179,7 +179,7 @@ nav.scrolled {
     width: 100%;
     max-width: 1000px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
